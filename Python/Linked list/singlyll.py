@@ -1,21 +1,26 @@
 #This is a python code to implement linked lists in python 
+#Implementation of linked list in python gives you the advantage of storing any type of data in the data field of the node
 import os
 
 class Node():
+    #node contains data and link
     def __init__(self, data):
         self.data = data
         self.link = None
 
 class Llist():
+    #inititalising head. You can only access the other elements from the head
     def __init__(self):
         self.head = None
-        
+    
+    #returns true is list is empty, else returns False
     def isempty(self):
         if (self.head == None):
             return True
         else:
             return False
         
+    #traverses and returns the last element and its previous element of the list
     def traverse(self):
         if(self.isempty() == True):
             return None
@@ -25,8 +30,12 @@ class Llist():
             while(curr.link != None):
                 prev = curr
                 curr = curr.link
-            return (prev, curr)
-        
+            if(prev == curr):
+                return(None, curr)
+            else:
+                return (prev, curr)
+    
+    #inserts element at the front of the list, changes head
     def insert_front(self, ele):
         newnode = Node(ele)
         if(self.isempty() == True):
@@ -36,6 +45,7 @@ class Llist():
             self.head = newnode
         print(ele, "Inserted successfully")
 
+    #traverses and inserts the element to the end of the list
     def insert_rear(self, ele):
         newnode = Node(ele)
         if(self.isempty() == True):
@@ -44,7 +54,8 @@ class Llist():
             temp = self.traverse()[1]
             temp.link = newnode
         print(ele, "Inserted successfully")
-            
+    
+    #inserts the element after the specified data node. If data node is not found, does nothing     
     def insert_after(self, prev_data, ele):
         newnode = Node(ele)
         if(self.isempty() == True):
@@ -72,6 +83,7 @@ class Llist():
                 if(found != 1):
                     print("Specified Node doesn't exist. Insert Unsuccessful")
     
+    #deletes the head element of the list
     def delete_front(self):
         if(self.isempty() == True):
             print("List empty")
@@ -80,7 +92,8 @@ class Llist():
             x = self.head.data
             self.head = self.head.link
             return x
-        
+    
+    #deletes the last element of the list
     def delete_rear(self):
         if(self.isempty() == True):
             print("List empty")
@@ -97,7 +110,8 @@ class Llist():
                 prev.link = None
                 del curr
                 return x
-        
+    
+    #deletes the specified element from the list
     def delete_pos(self, ele):
         if(self.isempty() == True):
             print("List empty")
@@ -115,7 +129,8 @@ class Llist():
             if(curr.link == None):
                 print("Specified Node doesn't exist. Delete Unsuccessful")
                 return -1
-        
+    
+    #returns 1 if the searched element is found. else returns 0
     def search(self, ele):
         if(self.isempty() == True):
             print("List empty")
@@ -130,7 +145,8 @@ class Llist():
             else:
                 print("Element found")
                 return 1
-
+    
+    #displays the list in linear form
     def display(self):
         if(self.isempty() == True):
             print("List empty")
@@ -142,13 +158,17 @@ class Llist():
                 temp = temp.link
             print(temp.data)
 
+#functions to clear screen for the menu driven program
 def clear():
     os.system("cls")
 def pausenclear():
     input("Press enter to continue:")
     os.system("cls")  
 
+#creating the linked list object
 l1 = Llist()
+
+#Menu: (self explanatory)
 while True:
     clear()
     print("Your choices are: 1. Insert 2. Delete 3. Search 4. Display 5. Exit")
