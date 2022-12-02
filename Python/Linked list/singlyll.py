@@ -176,63 +176,64 @@ def pausenclear():
     input("Press enter to continue:")
     os.system("cls")  
 
-#creating the linked list object
-l1 = Llist()
+if __name__ == "__main__":
+    #creating the linked list object
+    l1 = Llist()
 
-#Menu: (self explanatory)
-while True:
-    clear()
-    print("Your choices are: 1. Insert 2. Delete 3. Search 4. Display 5. Exit")
-    ch = int(input("Enter your choice(1/2/3/4/5):"))
-    if(ch == 1):
-        while True:
-            clear()
-            print("Your choices are: 1. Insert Front 2. Insert Rear 3. Insert after 4. Back")
-            ch2 = int(input("Enter your choice(1/2/3/4/5):"))
-            if(ch2 == 1):
-                a = input("Enter data:")
-                l1.insert_front(a)
-            elif(ch2 == 2):
-                a = input("Enter data:")
-                l1.insert_rear(a)
-            elif(ch2 == 3):
-                a = input("Enter data:")
-                b = input("Enter the data after which you want to insert:")
-                l1.insert_after(b, a)
-            elif(ch2 == 4):
-                pausenclear()
-                break
-            pausenclear()
-    elif(ch == 2):
-        while True:
-            clear()
-            print("Your choices are: 1. Delete Front 2. Delete Rear 3. Delete specified 4. Back")
-            ch2 = int(input("Enter your choice(1/2/3/4/5):"))
-            if(ch2 == 1):
-                x = l1.delete_front()
-            elif(ch2 == 2):
-                clear()
-                x = l1.delete_rear()
-            elif(ch2 == 3):
-                clear()
-                b = input("Enter the data you want to delete:")
-                x = l1.delete_pos(b)
-            elif(ch2 == 4):
-                pausenclear()
-                break
-            if(x != -1):
-                print(x, "Deleted successfully")
-            pausenclear()
-    elif(ch == 3):
+    #Menu: (self explanatory)
+    while True:
         clear()
-        a = input("Enter the element you want to search:")
-        l1.search(a)
-        pausenclear()
-    elif(ch == 4):
-        clear()
-        l1.display()
-        pausenclear()
-    elif(ch == 5):
-        break
-        
+        print("Your choices are: 1. Insert 2. Delete 3. Search 4. Display 5. Exit")
+        ch = int(input("Enter your choice(1/2/3/4/5):"))
+        if(ch == 1):
+            while True:
+                clear()
+                print("Your choices are: 1. Insert Front 2. Insert Rear 3. Insert after 4. Back")
+                ch2 = int(input("Enter your choice(1/2/3/4/5):"))
+                if(ch2 == 1):
+                    a = input("Enter data:")
+                    l1.insert_front(a)
+                elif(ch2 == 2):
+                    a = input("Enter data:")
+                    l1.insert_rear(a)
+                elif(ch2 == 3):
+                    a = input("Enter data:")
+                    b = input("Enter the data after which you want to insert:")
+                    l1.insert_after(b, a)
+                elif(ch2 == 4):
+                    pausenclear()
+                    break
+                pausenclear()
+        elif(ch == 2):
+            while True:
+                clear()
+                print("Your choices are: 1. Delete Front 2. Delete Rear 3. Delete specified 4. Back")
+                ch2 = int(input("Enter your choice(1/2/3/4/5):"))
+                if(ch2 == 1):
+                    x = l1.delete_front()
+                elif(ch2 == 2):
+                    clear()
+                    x = l1.delete_rear()
+                elif(ch2 == 3):
+                    clear()
+                    b = input("Enter the data you want to delete:")
+                    x = l1.delete_pos(b)
+                elif(ch2 == 4):
+                    pausenclear()
+                    break
+                if(x != -1):
+                    print(x, "Deleted successfully")
+                pausenclear()
+        elif(ch == 3):
+            clear()
+            a = input("Enter the element you want to search:")
+            l1.search(a)
+            pausenclear()
+        elif(ch == 4):
+            clear()
+            l1.display()
+            pausenclear()
+        elif(ch == 5):
+            break
+            
 
