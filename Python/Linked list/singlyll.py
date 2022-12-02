@@ -38,9 +38,9 @@ class Llist():
     #inserts element at the front of the list, changes head
     def insert_front(self, ele):
         newnode = Node(ele)
-        if(self.isempty() == True):
+        if(self.isempty() == True): #when list is empty
             self.head = newnode
-        else:
+        else: #when list is not empty
             newnode.link = self.head
             self.head = newnode
         print(ele, "Inserted successfully")
@@ -48,9 +48,9 @@ class Llist():
     #traverses and inserts the element to the end of the list
     def insert_rear(self, ele):
         newnode = Node(ele)
-        if(self.isempty() == True):
+        if(self.isempty() == True): #when list is empty
             self.head = newnode
-        else:
+        else: #when list is not empty
             temp = self.traverse()[1]
             temp.link = newnode
         print(ele, "Inserted successfully")
@@ -58,16 +58,16 @@ class Llist():
     #inserts the element after the specified data node. If data node is not found, does nothing     
     def insert_after(self, prev_data, ele):
         newnode = Node(ele)
-        if(self.isempty() == True):
+        if(self.isempty() == True): #when list is empty
             print("Specified Node doesn't exist. Insert Unsuccessful")
-        else:
-            if (self.head.link == None):
+        else: #when list is not empty
+            if (self.head.link == None): #if there is only one element in list
                 if(self.head.data == prev_data):
                     self.head.link = newnode
                     print(ele, "Inserted successfully")
                 else:
                     print("Specified Node doesn't exist. Insert Unsuccessful")
-            else:
+            else: #when there are more than 1 element in the list
                 found = -1
                 curr = self.head
                 prev = self.head
@@ -85,25 +85,25 @@ class Llist():
     
     #deletes the head element of the list
     def delete_front(self):
-        if(self.isempty() == True):
+        if(self.isempty() == True): #when list is empty
             print("List empty")
             return -1
-        else:
+        else: #when list is not empty
             x = self.head.data
             self.head = self.head.link
             return x
     
     #deletes the last element of the list
     def delete_rear(self):
-        if(self.isempty() == True):
+        if(self.isempty() == True): #when list is empty
             print("List empty")
             return -1
-        else:
-            if(self.head.link == None):
+        else: #when list is not empty
+            if(self.head.link == None): #if there is only one element in list
                 x = self.head.data
                 self.head = None
                 return x
-            else:
+            else: #when there are more than 1 element in the list
                 curr = self.traverse()[1]
                 prev = self.traverse()[0]
                 x = curr.data
@@ -113,10 +113,10 @@ class Llist():
     
     #deletes the specified element from the list
     def delete_pos(self, ele):
-        if(self.isempty() == True):
+        if(self.isempty() == True): #when list is empty
             print("List empty")
             return -1
-        elif(self.head.link == None):
+        elif(self.head.link == None): #if there is only one element in list
             if(self.head.data == ele):
                 x = self.head.data
                 self.head = None
@@ -124,7 +124,7 @@ class Llist():
             else:
                 print("Specified Node doesn't exist. Delete Unsuccessful")
                 return -1
-        else:
+        else: #when there are more than 1 element in the list
             curr = self.head
             prev = None
             while(curr != None):
@@ -143,10 +143,10 @@ class Llist():
     
     #returns 1 if the searched element is found. else returns 0
     def search(self, ele):
-        if(self.isempty() == True):
+        if(self.isempty() == True): #when list is empty
             print("List empty")
             return 0
-        else:
+        else: #when list is not empty
             temp = self.head
             while(temp != None and temp.data != ele):
                 temp = temp.link
