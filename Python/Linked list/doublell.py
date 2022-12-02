@@ -34,9 +34,9 @@ class Llist():
     #inserts element at the front of the list, changes head
     def insert_front(self, ele):
         newnode = Node(ele)
-        if(self.isempty() == True):
+        if(self.isempty() == True): #when list is empty
             self.head = newnode
-        else:
+        else: #when list is not empty
             newnode.rlink = self.head
             self.head.llink = newnode
             self.head = newnode
@@ -45,9 +45,9 @@ class Llist():
     #traverses and inserts the element to the end of the list
     def insert_rear(self, ele):
         newnode = Node(ele)
-        if(self.isempty() == True):
+        if(self.isempty() == True): #when list is empty
             self.head = newnode
-        else:
+        else: #when list is not  empty
             temp = self.traverse()
             temp.rlink = newnode
             newnode.llink = temp
@@ -56,17 +56,17 @@ class Llist():
     #inserts the element after the specified data node. If data node is not found, does nothing     
     def insert_after(self, prev_data, ele):
         newnode = Node(ele)
-        if(self.isempty() == True):
+        if(self.isempty() == True): #when list is empty
             print("Specified Node doesn't exist. Insert Unsuccessful")
-        else:
-            if (self.head.rlink == None):
+        else: #when list is not empty
+            if (self.head.rlink == None): #if there is only one element in list
                 if(self.head.data == prev_data):
                     self.head.rlink = newnode
                     newnode.llink = self.head
                     print(ele, "Inserted successfully")
                 else:
                     print("Specified Node doesn't exist. Insert Unsuccessful")
-            else:
+            else: #when there are more than 1 element in the list
                 found = -1
                 curr = self.head
                 while(curr != None):
@@ -75,7 +75,8 @@ class Llist():
                         newnode.rlink = curr.rlink
                         curr.rlink = newnode
                         newnode.llink = curr
-                        newnode.rlink.llink = newnode
+                        if(newnode.rlink != None):
+                            newnode.rlink.llink = newnode
                         print(ele, "Inserted successfully")
                         break
                     curr = curr.rlink
@@ -84,10 +85,10 @@ class Llist():
     
     #deletes the head element of the list
     def delete_front(self):
-        if(self.isempty() == True):
+        if(self.isempty() == True): #when list is empty
             print("List empty")
             return -1
-        else:
+        else: #when list is not empty
             x = self.head.data
             self.head = self.head.rlink
             self.head.llink = None
@@ -95,15 +96,15 @@ class Llist():
     
     #deletes the last element of the list
     def delete_rear(self):
-        if(self.isempty() == True):
+        if(self.isempty() == True): #when list is empty
             print("List empty")
             return -1
-        else:
-            if(self.head.rlink == None):
+        else: #when list is not empty
+            if(self.head.rlink == None): #if there is only one element in list
                 x = self.head.data
                 self.head = None
                 return x
-            else:
+            else: #if there is only one element in list
                 curr = self.traverse()
                 x = curr.data
                 curr.llink.rlink = None
@@ -112,18 +113,29 @@ class Llist():
     
     #deletes the specified element from the list
     def delete_pos(self, ele):
-        if(self.isempty() == True):
+        if(self.isempty() == True): #when list is empty
             print("List empty")
             return -1
-        else:
+        elif(self.head.rlink == None): #if there is only one element in list
+            if(self.head.data == ele):
+                x = self.head.data
+                self.head = None
+                return x
+            else:
+                print("Specified Node doesn't exist. Delete Unsuccessful")
+                return -1
+        else: #when there are more than 1 element in the list
             curr = self.head
-            while(curr.rlink != None):
+            while(curr != None):
                 if(curr.data == ele):
                     x = curr.data
-                    curr.llink.rlink = curr.rlink
+                    if (curr != self.head):
+                        curr.llink.rlink = curr.rlink
+                    else:
+                        self.head = curr.rlink
                     return x
                 curr = curr.rlink
-            if(curr.rlink == None):
+            if(curr == None):
                 print("Specified Node doesn't exist. Delete Unsuccessful")
                 return -1
     
