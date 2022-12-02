@@ -21,22 +21,22 @@ class Llist():
     
     #inserts element at the front of the list, changes head
     def insert_front(self, ele):
-        newnode = Node(ele)
-        if(self.isempty() == True):
+        newnode = Node(ele) # Initialising node
+        if(self.isempty() == True): #when list is empty
             self.tail = newnode
             self.tail.link = self.tail
-        else:
+        else: #when list is not empty
             newnode.link = self.tail.link
             self.tail.link = newnode
         print(ele, "Inserted successfully")
 
     #traverses and inserts the element to the end of the list
     def insert_rear(self, ele):
-        newnode = Node(ele)
-        if(self.isempty() == True):
+        newnode = Node(ele) # Initialising node
+        if(self.isempty() == True): #when list is empty
             self.tail = newnode
             self.tail.link = self.tail
-        else:
+        else: #when list is not empty
             newnode.link = self.tail.link
             self.tail.link = newnode
             self.tail = newnode
@@ -44,13 +44,13 @@ class Llist():
     
     #inserts the element after the specified data node. If data node is not found, does nothing     
     def insert_after(self, prev_data, ele):
-        newnode = Node(ele)
-        if(self.isempty() == True):
+        newnode = Node(ele) # Initialising node
+        if(self.isempty() == True): #when list is empty
             print("Specified Node doesn't exist. Insert Unsuccessful")
-        else:
-            if(self.tail.data == prev_data):
+        else: #when list is not empty
+            if(self.tail.data == prev_data): #if searched element is tail itself
                 self.insert_rear(ele)
-            else:    
+            else: #when there are more than 1 element in the list
                 found = -1
                 curr = self.tail.link
                 prev = self.tail
@@ -69,15 +69,15 @@ class Llist():
             
     #deletes the head element of the list
     def delete_front(self):
-        if(self.isempty() == True):
+        if(self.isempty() == True): #when list is empty
             print("List empty")
             return -1
-        else:
-            if(self.tail.link == self.tail):
+        else: #when list is not empty
+            if(self.tail.link == self.tail): #if there is only one element in list
                 x = self.tail.data
                 self.tail = None
                 return x
-            else:
+            else: #when there are more than 1 element in the list
                 x = self.tail.link.data
                 self.tail.link = self.tail.link.link
                 return x
@@ -85,14 +85,14 @@ class Llist():
     
     #deletes the last element of the list
     def delete_rear(self):
-        if(self.isempty() == True):
+        if(self.isempty() == True): #when list is empty
             print("List empty")
             return -1
-        elif(self.tail.link == self.tail):
+        elif(self.tail.link == self.tail): #if there is only one element in list
             x = self.tail.data
             self.tail = None
             return x
-        else:
+        else: #when there are more than 1 element in the list
             curr = self.tail.link
             while(curr.link != self.tail):
                 curr = curr.link
@@ -104,17 +104,17 @@ class Llist():
                 
     #deletes the specified element from the list
     def delete_pos(self, ele):
-        if(self.isempty() == True):
+        if(self.isempty() == True): #when list is empty
             print("List empty")
-            return -1
-        elif(self.tail.link == None):
+            return -1 
+        elif(self.tail.link == self.tail): #if there is only one element in list
             if(self.tail.data == ele):
                 x = self.tail.data
                 self.tail.data = None
                 return x
             else:
                 return -1
-        else:
+        else: #when there are more than 1 element in the list
             curr = self.tail.link
             prev = self.tail
             while(curr != self.tail):
@@ -131,10 +131,10 @@ class Llist():
     
     #returns 1 if the searched element is found. else returns 0
     def search(self, ele):
-        if(self.isempty() == True):
+        if(self.isempty() == True): #when list is empty
             print("List empty")
             return 0
-        else:
+        else: #when list is not empty
             temp = self.tail.link
             while(temp != self.tail and temp.data != ele):
                 temp = temp.link
@@ -144,6 +144,7 @@ class Llist():
             else:
                 print("Element found")
                 return 1
+            
     #displays the list in linear form
     def display(self):
         if(self.isempty() == True):

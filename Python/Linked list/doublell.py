@@ -33,7 +33,7 @@ class Llist():
     
     #inserts element at the front of the list, changes head
     def insert_front(self, ele):
-        newnode = Node(ele)
+        newnode = Node(ele) # Initialising node
         if(self.isempty() == True): #when list is empty
             self.head = newnode
         else: #when list is not empty
@@ -44,7 +44,7 @@ class Llist():
 
     #traverses and inserts the element to the end of the list
     def insert_rear(self, ele):
-        newnode = Node(ele)
+        newnode = Node(ele) # Initialising node
         if(self.isempty() == True): #when list is empty
             self.head = newnode
         else: #when list is not  empty
@@ -55,7 +55,7 @@ class Llist():
     
     #inserts the element after the specified data node. If data node is not found, does nothing     
     def insert_after(self, prev_data, ele):
-        newnode = Node(ele)
+        newnode = Node(ele) # Initialising node
         if(self.isempty() == True): #when list is empty
             print("Specified Node doesn't exist. Insert Unsuccessful")
         else: #when list is not empty
