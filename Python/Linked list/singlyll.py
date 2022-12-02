@@ -116,17 +116,28 @@ class Llist():
         if(self.isempty() == True):
             print("List empty")
             return -1
+        elif(self.head.link == None):
+            if(self.head.data == ele):
+                x = self.head.data
+                self.head = None
+                return x
+            else:
+                print("Specified Node doesn't exist. Delete Unsuccessful")
+                return -1
         else:
             curr = self.head
-            prev = self.head
-            while(curr.link != None):
-                prev = curr
-                curr = curr.link
+            prev = None
+            while(curr != None):
                 if(curr.data == ele):
                     x = curr.data
-                    prev.link = curr.link
+                    if(curr != self.head):
+                        prev.link = curr.link
+                    else:
+                        self.head = curr.link
                     return x
-            if(curr.link == None):
+                prev = curr
+                curr = curr.link
+            if(curr == None):
                 print("Specified Node doesn't exist. Delete Unsuccessful")
                 return -1
     
