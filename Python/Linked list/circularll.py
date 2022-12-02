@@ -8,7 +8,7 @@ class Node():
         self.link = None
 
 class Llist():
-    #inititalising tail. You can only access the other elements from the head
+    #inititalising tail. You can only access the other elements from the tail
     def __init__(self):
         self.tail = None
     
