@@ -69,7 +69,7 @@ void insert_rear(LIST *p,int data)
 void insert_at_position(LIST *p,int data,int pos)
 {
     int count=1;
-    if(pos==0)
+    if(pos==0 || p->tail==NULL)
     {
         insert_front(p,data);            //if position is 0 then insert as first node
     }
@@ -170,7 +170,14 @@ void delete_node(LIST *p,int data)
         }
         if(prev==NULL) //If the data is found in the first node itself
         {
-            p->tail->next=p->tail->next->next;
+            if(p->tail->next==p->tail)
+            {
+                p->tail=NULL;
+            }
+            else
+            {
+                p->tail->next=p->tail->next->next;
+            }
             printf("\n Successfully deleted node with data %d \n ",cur->data);
             free(cur);
         }
@@ -313,7 +320,8 @@ int main()
                    break;
             case 9:destroy(&l1);
                    break;
-            case 10:break;
+            case 10:printf("\n THANK YOU. EXITING..\n");
+                    break;
             default:printf("\n Invalid choice. Please try again! \n");
                     break;
         }
