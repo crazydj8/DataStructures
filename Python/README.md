@@ -20,5 +20,10 @@ When you run the program by itself, it will run normally, but when you import th
 
 ### **Conclusion?**
 
+<<<<<<< HEAD:Python/README.md
 In the end, its an unwritten code to be followed by python devs to differentiate between a module that needs to be imported(do not include *if __name__ == "__main__":*) and a script that needs to be run(include *if __name__ == "__main__":*),
 or for the code to work as both if necessary.
+=======
+In the end, its an unwritten rule to be followed by python devs to differentiate between a module that needs to be imported(do not include if __name__ == "__main__":) and a script that needs to be run(include if __name__ == "__main__":),
+or for the code to work as both if necessary.
+>>>>>>> 098a9527091ebd7a90b96654b2b3f81607cf7a86:Python/readme-python.txt
