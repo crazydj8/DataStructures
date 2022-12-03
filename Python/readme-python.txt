@@ -18,5 +18,5 @@ When you run the program by itself, it will run normally, but when you import th
 
 **Conclusion?
 
-In the end, its an unwritten code to be followed by python devs to differentiate between a module that needs to be imported and a script that needs to be run.
+In the end, its an unwritten code to be followed by python devs to differentiate between a module that needs to be imported(do not include and a script that needs to be run.
 or for the code to work as both if necessary.
