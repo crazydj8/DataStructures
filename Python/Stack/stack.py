@@ -38,7 +38,7 @@ class Stack():
             print("Underflow")
             return None
         else:
-            self.top = len(self.stk) - 1
+            #self.top = len(self.stk) - 1
             return self.stk[self.top]
         
     # displays the stack from top to bottom    
@@ -59,7 +59,7 @@ def pausenclear():
     os.system("cls")  
     
 if __name__ == "__main__":
-    #creating the linked list object
+    #creating the stack object
     s1 = Stack()
 
     #Menu: (self explanatory)
