@@ -34,7 +34,7 @@ class Stack():
 
     #peek function checks and returns the 'value' of top(does not return the index position)
     def peek(self):
-        if self.isempty(): #if peek is called when stack is empty, underflow occurs returns None
+        if self.isempty(): #if peek is called when stack is empty, underflow occurs, returns None
             print("Underflow")
             return None
         else:
