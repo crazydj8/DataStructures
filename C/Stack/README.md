@@ -10,7 +10,7 @@ A Stack is a linear data structure, where all the insertion and deletion of elem
 Pushes(Inserts) an element on top of the stack.
 
 **2) Pop:**
-Pops the topmost element of the stack. Returns Underflow, if list is empty.
+Pops(Deletes) the topmost element of the stack. Returns Underflow, if Stack is empty.
 
 **3) Peek:**
 Returns the ***Value*** of the topmost element of the stack. ***Does not return its index postition***. Returns Underflow, if list is empty.
