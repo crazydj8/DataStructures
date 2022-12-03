@@ -20,6 +20,7 @@ Displays the stack from top to down order.
 
 ### **Application of stacks:**
 
+- **[MOST IMPORTANT] Recursion**
 - Infix to postfix conversion
 - Infix to prefix conversion
 - Conversion of prefix/postfix to infix
