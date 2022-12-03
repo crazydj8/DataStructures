@@ -29,4 +29,4 @@ A doubly linked list where the last node in the list connects back to the first 
 
 ![DoubCircll](../../img/gfg_doublycircll.png)
 
-Credits for all images to [Geeks for geeks](https://www.geeksforgeeks.org/data-structures/linked-list/)
+Image Courtesy: [Geeks for geeks](https://www.geeksforgeeks.org/data-structures/linked-list/)
