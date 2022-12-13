@@ -77,7 +77,8 @@ if __name__ == "__main__":
         elif(ch == 2):
             clear()
             itm = s1.pop()
-            print("Successfully deleted:", itm)
+            if(itm != -1):
+                print("Successfully deleted:", itm)
             pausenclear()
     
         elif(ch == 3):
