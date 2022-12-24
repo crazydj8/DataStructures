@@ -13,7 +13,7 @@ void init(STK *p)               //initializing stack top to -1
     p->top=-1;
 }
 
-//Stack is a data structure that works on Last In First Out(LIFO) principle.
+//stack is a data structure that works on Last In First Out(LIFO) principle.
 
 void push(STK *p,int ele)      //push operation to push an element on the top of stack
 {
