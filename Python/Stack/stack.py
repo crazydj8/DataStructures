@@ -1,4 +1,4 @@
-#This is a python code to implement stacks in python 
+#This is a python code to implement stacks in python using python lists
 import os
 
 class Stack():
