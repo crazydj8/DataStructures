@@ -24,7 +24,7 @@ Displays the stack from top to down order.
 - Infix to postfix conversion
 - Infix to prefix conversion
 - Conversion of prefix/postfix to infix
-- Tower of Hanoi problems
+- Tower of Hanoi problem
 
 [Note: The applications have not been uploaded]
 
