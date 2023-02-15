@@ -74,7 +74,7 @@ def pausenclear():
 
 if __name__ == "__main__":
     #creating the heap object of defined array size
-    h1 = Heap(3) 
+    h1 = Heap(20) 
     #Menu: (self explanatory)
     while True:
         clear()
