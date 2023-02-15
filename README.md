@@ -10,6 +10,8 @@ Currently Languages used:
 - Linked list
 - Stacks
 - Queues
+- Binary Trees
+- Heaps
 
 ## Credits:
 **Contributors:**
