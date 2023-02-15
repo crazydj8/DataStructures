@@ -20,4 +20,4 @@ node
 
 ![binsearchtree](../../img/gfg_binsearchtrees.png)
 
-Image Courtesy: [Geeks for geeks](https://www.geeksforgeeks.org/data-structures/linked-list/)
+Image Courtesy: [Geeks for geeks](https://www.geeksforgeeks.org/data-structures/binary-tree-data-structure/)
