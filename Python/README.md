@@ -1,6 +1,6 @@
 # Important
 
-**For those who are wondering why *if \_\_name__ == "\_\_main__":* has been used in the end before the menu in all the programs,**
+**For those who are wondering why** ```if __name__ == "__main__":``` **has been used in the end before the menu in all the programs,**
 
 The program can also work without it but it is advisable to use it as:
 
@@ -10,7 +10,7 @@ The program has 2 parts:
 
 the class and function defintions are very useful as they can be imported and used directly in other programs.
 
-### **Now what does *if \_\_name__ == "\_\_main__":* do?**
+### **Now what does** ```if __name__ == "__main__":``` **do?**
 
 It makes it so that the part thats indented under it will only run when you're running the program itself as a script, and will not run when you import the same code to be used as a module in another program. 
 
@@ -20,5 +20,5 @@ When you run the program by itself, it will run normally, but when you import th
 
 ### **Conclusion?**
 
-In the end, its an unwritten rule to be followed by python devs to differentiate between a module that needs to be imported(do not include inside *if \_\_name__ == "\_\_main__":*) and a script that needs to be run(include inside *if \_\_name__ == "\_\_main__":*),
+In the end, its an unwritten rule to be followed by python devs to differentiate between a module that needs to be imported(do not include inside ```if __name__ == "__main__":```) and a script that needs to be run(include inside ```if __name__ == "__main__":```),
 or for the code to work as both if necessary.
