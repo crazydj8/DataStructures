@@ -26,10 +26,11 @@ class BinTree():
         newnode = Node(ele) #Initialising a new node to be inserted
         if(self.isempty()):
             self.root = newnode #when list empty new node becomes root
+            
         else:
             curr = self.root
             while(curr != None): #when list is not empty, traverse branches to find the correct position
-                prev = curr;
+                prev = curr
                 if(newnode.data == curr.data):
                     print(ele, "Already exists in tree")
                     return
