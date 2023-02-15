@@ -65,6 +65,9 @@ class Heap():
                     print(self.heap_arr[i], end = " ")
                 else:
                     print(self.heap_arr[i])
+
+'''IMPORTANT: The implementation used here creates a max heap, To create a min heap, switch the positions of the shift_up and shift_down in the insert and delete functions 
+'''
 #functions to clear screen for the menu driven program
 def clear():
     os.system("cls")
