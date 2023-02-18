@@ -123,7 +123,7 @@ if __name__ == "__main__":
     #Menu: (self explanatory)
     while True:
         clear()
-        print("Your choices are: 1. Create Graph 2. Edit Graph 3. Delete Graph 4. Display Adjacency Matrix 5. In and Our Frequencies 6. DFS Traversal 7. BFS Traversal 8. Exit")
+        print("Your choices are: 1. Create Graph 2. Edit Graph 3. Delete Graph 4. Display Adjacency Matrix 5. In and Out Frequencies 6. DFS Traversal 7. BFS Traversal 8. Exit")
         ch = int(input("Enter your choice(1/2/3/4/5/6/7/8):"))
         if(ch == 1):
             clear()
