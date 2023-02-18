@@ -12,6 +12,7 @@ Currently Languages used:
 - Queues
 - Binary Trees
 - Heaps
+- Graphs
 
 ## Credits:
 **Contributors:**
