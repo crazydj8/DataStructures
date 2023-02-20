@@ -74,7 +74,7 @@ void peep(STK p)                //peep operation to see the element at top of th
     }
     else
     {
-        printf("\n The top element is = %d",(p.head)->data);        //p.head is an address of structure NODE, so to access its data we use '->'
+        printf("\n The top element is = %d\n",(p.head)->data);        //p.head is an address of structure NODE, so to access its data we use '->'
     }
 }
 
