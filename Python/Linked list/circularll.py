@@ -28,7 +28,6 @@ class Llist():
         else: #when list is not empty
             newnode.link = self.tail.link
             self.tail.link = newnode
-        print(ele, "Inserted successfully")
 
     #traverses and inserts the element to the end of the list
     def insert_rear(self, ele):
@@ -40,13 +39,12 @@ class Llist():
             newnode.link = self.tail.link
             self.tail.link = newnode
             self.tail = newnode
-        print(ele, "Inserted successfully")
     
     #inserts the element after the specified data node. If data node is not found, does nothing     
     def insert_after(self, prev_data, ele):
         newnode = Node(ele) # Initialising node
         if(self.isempty() == True): #when list is empty
-            print("Specified Node doesn't exist. Insert Unsuccessful")
+            return 0
         else: #when list is not empty
             if(self.tail.data == prev_data): #if searched element is tail itself
                 self.insert_rear(ele)
@@ -61,17 +59,15 @@ class Llist():
                         found = 1
                         newnode.link = prev.link
                         prev.link = newnode
-                        print(ele, "Inserted successfully")
-                        break
+                        return 1
                 if(found != 1):
-                    print("Specified Node doesn't exist. Insert Unsuccessful")
+                    return -1
 
             
     #deletes the head element of the list
     def delete_front(self):
         if(self.isempty() == True): #when list is empty
-            print("List empty")
-            return -1
+            return None
         else: #when list is not empty
             if(self.tail.link == self.tail): #if there is only one element in list
                 x = self.tail.data
@@ -86,8 +82,7 @@ class Llist():
     #deletes the last element of the list
     def delete_rear(self):
         if(self.isempty() == True): #when list is empty
-            print("List empty")
-            return -1
+            return None
         elif(self.tail.link == self.tail): #if there is only one element in list
             x = self.tail.data
             self.tail = None
@@ -105,8 +100,7 @@ class Llist():
     #deletes the specified element from the list
     def delete_pos(self, ele):
         if(self.isempty() == True): #when list is empty
-            print("List empty")
-            return -1 
+            return None
         elif(self.tail.link == self.tail): #if there is only one element in list
             if(self.tail.data == ele):
                 x = self.tail.data
@@ -126,8 +120,7 @@ class Llist():
                     return x
                 prev = curr
                 curr = curr.link
-            print("Specified Node doesn't exist. Delete Unsuccessful")
-            return -1
+            return None
     
     #returns 1 if the searched element is found. else returns 0
     def search(self, ele):
@@ -181,13 +174,21 @@ if __name__ == "__main__":
                 if(ch2 == 1):
                     a = input("Enter data:")
                     l1.insert_front(a)
+                    print(a, "Inserted successfully")
                 elif(ch2 == 2):
                     a = input("Enter data:")
                     l1.insert_rear(a)
+                    print(a, "Inserted successfully")
                 elif(ch2 == 3):
                     a = input("Enter data you want to insert:")
                     b = input("Enter the data after which you want to insert:")
-                    l1.insert_after(b, a)
+                    x = l1.insert_after(b, a)
+                    if(x == 0):
+                        print("list empty")
+                    elif(x == -1):
+                        print("Specified node does not exist.")
+                    else:
+                        print(a, "Inserted successfully")
                 elif(ch2 == 4):
                     pausenclear()
                     break
@@ -209,13 +210,21 @@ if __name__ == "__main__":
                 elif(ch2 == 4):
                     pausenclear()
                     break
-                if(x != -1):
+                if(x != None):
                     print(x, "Deleted successfully")
+                else:
+                    print("Delete Unsuccessful")
                 pausenclear()
         elif(ch == 3):
             clear()
             a = input("Enter the element you want to search:")
-            l1.search(a)
+            x = l1.search(a)
+            if(x == 0):
+                print("list empty")
+            elif(x == -1):
+                print("Element not found")
+            else:
+                print("Element found")
             pausenclear()
         elif(ch == 4):
             clear()
