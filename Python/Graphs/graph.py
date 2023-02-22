@@ -28,6 +28,7 @@ class Graph():
 
     #delete function deletes the existing graph
     def delete(self):
+        del(self.adjmat)
         self.adjmat = None #points self.adjmat to None now
         self.created = 0 #self.created = 0 means that the graph does not exist
         
