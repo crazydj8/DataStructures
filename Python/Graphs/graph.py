@@ -19,7 +19,9 @@ class Graph():
             if(i == -1 and j == -1): #-1 -1 are the sentinel to let the program know when to stop
                 break
             else:
-                if(i == j):
+                if(j >= n or i >= n):
+                    print("Node cannot take value >=", n)
+                elif(i == j):
                     print("Cannot link a node to self")
                 else:
                     self.adjmat[i][j] = 1 #1 value in the adjmat[i][j] signifies that a link exists from i to j
