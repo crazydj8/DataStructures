@@ -8,7 +8,7 @@ class Graph():
         self.adjmat = None
         self.created = 0 #flag to indicate that a graph has been created
 
-    #create fuction creates a graph of nxn nodes and asks us to define the links using a simple loop
+    #create fuction creates a matrix of nxn nodes and asks us to define the links using a simple loop
     def create(self):
         n = int(input("Enter the number of nodes:"))
         self.adjmat = np.zeros(n ** 2, int).reshape(n, n) #np.zeros function directly creates an array of zeros of specified length. np.reshape then reshapes the array in the specified dimensions, here in our case: nxn 
