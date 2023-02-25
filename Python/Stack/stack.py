@@ -22,8 +22,7 @@ class Stack():
     #pops an element from the stack, updates value of top
     def pop(self):
         if self.isempty(): #if pop is called when stack is empty, underflow occurs
-            print("Underflow")
-            return -1
+            return None
         else:
             self.item = self.stk.pop()
             if self.isempty():
@@ -35,7 +34,6 @@ class Stack():
     #peek function checks and returns the 'value' of top(does not return the index position)
     def peek(self):
         if self.isempty(): #if peek is called when stack is empty, underflow occurs, returns None
-            print("Underflow")
             return None
         else:
             #self.top = len(self.stk) - 1
@@ -77,14 +75,19 @@ if __name__ == "__main__":
         elif(ch == 2):
             clear()
             itm = s1.pop()
-            if(itm != -1):
+            if(itm != None):
                 print("Successfully deleted:", itm)
+            else:
+                print("Underflow")
             pausenclear()
     
         elif(ch == 3):
             clear()
             itm = s1.peek()
-            print ("Element on Top =", itm)
+            if(itm != None):
+                print ("Element on Top =", itm)
+            else:
+                print("Underflow")
             pausenclear()
             
         elif(ch == 4):

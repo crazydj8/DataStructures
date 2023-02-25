@@ -24,8 +24,7 @@ class Queue():
     #dequeues an item from the stack, item always leaves the queue from front    
     def dequeue(self):
         if self.isempty(): #if pop is called when stack is empty, underflow occurs
-            print("Underflow")
-            return -1
+            return None
         else:
             self.item = self.queue.pop(0)
             if self.isempty():
@@ -38,7 +37,6 @@ class Queue():
     #peek function checks and returns the 'value' of front(does not return the index position)
     def peek(self):
         if self.isempty(): #if peek is called when stack is empty, underflow occurs returns None
-            print("Underflow")
             return None
         else:
             return self.queue[self.front]
@@ -76,13 +74,19 @@ if __name__ == "__main__":
         elif ch == 2:
             clear()
             itm = q1.dequeue()
-            print("Successfully dequeued:", itm)
+            if(itm != None):
+                print("Successfully dequeued:", itm)
+            else:
+                print("Underflow")
             pausenclear()
         
         elif ch == 3:
             clear()
             itm = q1.peek()
-            print ("Element at front =", itm)
+            if(itm != None):
+                print ("Element at front =", itm)
+            else:
+                print("Underflow")
             pausenclear()
             
         elif ch == 4:
