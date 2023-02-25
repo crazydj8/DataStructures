@@ -28,7 +28,6 @@ class Graph():
 
     #delete function deletes the existing graph
     def delete(self):
-        del(self.adjmat)
         self.adjmat = None #points self.adjmat to None now
         self.created = 0 #self.created = 0 means that the graph does not exist
         
@@ -192,6 +191,9 @@ if __name__ == "__main__":
                 visited = np.zeros(len(g1.adjmat), int)
                 print("DFS Taversal:")
                 g1.dfs(x)
+                for i in range(0, len(visited)):
+                    if(visited[i] == 0):
+                        g1.dfs(i)
                 print()
             else:
                 print("Create a graph first!")
@@ -208,6 +210,9 @@ if __name__ == "__main__":
                 visited = np.zeros(len(g1.adjmat), int)
                 print("BFS Taversal:")
                 g1.bfs(x)
+                for i in range(0, len(visited)):
+                    if(visited[i] == 0):
+                        g1.bfs(i)
                 print()
             else:
                 print("Create a graph first!")
