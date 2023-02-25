@@ -7,7 +7,7 @@ Graph G is a pair (V, E), where V is a finite set of vertices and E is a finite 
 - **Directed graph:** A graph G = (V, E) in which every edge is directed is called a directed graph.
 Here, the edge <1, 2> is not the same as <2, 1>
 
-    We have done the implementation of directed graph.
+    ***We have done the implementation of directed graph.***
 
     ![dgraph](../../img/pesu_directgraph.png)
 
@@ -24,6 +24,7 @@ a numerical value called weight. It can be both directed or undirected.
 
 ### **Extra Python modules used:**
 - **Numpy:** Numpy module was used for creation of the arrays
+- **Importlib:** to import a user created module from any location within the system
 
 If Numpy module is not installed, make sure pip is installed, go to the terminal and type:
 
