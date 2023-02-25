@@ -23,7 +23,7 @@ a numerical value called weight. It can be both directed or undirected.
     ![wgraph](../../img/pesu_weightgraph.png)
 
 ### **Extra Python modules used:**
-- **Numpy:** Numpy module was used for creation of the heap array
+- **Numpy:** Numpy module was used for creation of the arrays
 
 If Numpy module is not installed, make sure pip is installed, go to the terminal and type:
 
