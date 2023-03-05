@@ -13,6 +13,7 @@ Currently Languages used:
 - Binary Trees
 - Heaps
 - Graphs
+- Hash Tables
 
 ## Credits:
 **Contributors:**
