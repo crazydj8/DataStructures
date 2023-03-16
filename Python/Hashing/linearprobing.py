@@ -1,4 +1,5 @@
 # python code to implement linear probing hashing technique
+# code by Akshat Aryan
 import os
 import numpy as np
 
