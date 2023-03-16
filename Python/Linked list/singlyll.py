@@ -1,14 +1,15 @@
 #This is a python code to implement linked lists in python 
 #Implementation of linked list in python gives you the advantage of storing any type of data in the data field of the node
+#Code by Akshat Aryan
 import os
 
 class Node():
     #node contains data and link
     def __init__(self, data):
         self.data = data
-        self.link = None
+        self.__link = None
 
-class Llist():
+class Llist(Node):
     #inititalising head. You can only access the other elements from the head
     def __init__(self):
         self.head = None
@@ -22,7 +23,7 @@ class Llist():
         
     #traverses and returns the last element and its previous element of the list
     def traverse(self):
-        if(self.isempty() == True):
+        if(self.isempty()):
             return None
         else:
             curr = self.head
@@ -33,12 +34,12 @@ class Llist():
             if(prev == curr):
                 return(None, curr)
             else:
-                return (prev, curr)
+                return(prev, curr)
     
     #inserts element at the front of the list, changes head
     def insert_front(self, ele):
         newnode = Node(ele) # Initialising node
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             self.head = newnode
         else: #when list is not empty
             newnode.link = self.head
@@ -47,7 +48,7 @@ class Llist():
     #traverses and inserts the element to the end of the list
     def insert_rear(self, ele):
         newnode = Node(ele) # Initialising node
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             self.head = newnode
         else: #when list is not empty
             temp = self.traverse()[1]
@@ -56,7 +57,7 @@ class Llist():
     #inserts the element after the specified data node. If data node is not found, does nothing     
     def insert_after(self, prev_data, ele):
         newnode = Node(ele) # Initialising node
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             return -1
         else: #when list is not empty
             if (self.head.link == None): #if there is only one element in list
@@ -81,7 +82,7 @@ class Llist():
     
     #deletes the head element of the list
     def delete_front(self):
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             return None
         else: #when list is not empty
             x = self.head.data
@@ -90,7 +91,7 @@ class Llist():
     
     #deletes the last element of the list
     def delete_rear(self):
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             return None
         else: #when list is not empty
             if(self.head.link == None): #if there is only one element in list
@@ -107,7 +108,7 @@ class Llist():
     
     #deletes the specified element from the list
     def delete_pos(self, ele):
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             return None
         elif(self.head.link == None): #if there is only one element in list
             if(self.head.data == ele):
@@ -134,7 +135,7 @@ class Llist():
     
     #returns 1 if the searched element is found. else returns 0
     def search(self, ele):
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             return 0
         else: #when list is not empty
             temp = self.head
@@ -147,7 +148,7 @@ class Llist():
     
     #displays the list in linear form
     def display(self):
-        if(self.isempty() == True):
+        if(self.isempty()):
             print("List empty")
         else:
             print("Your linked list is:")
