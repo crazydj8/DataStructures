@@ -1,4 +1,5 @@
 #This is a python code to implement circular linked lists in python 
+#Code by Akshat Aryan
 import os
 
 class Node():
@@ -23,7 +24,7 @@ class Llist():
     #inserts element at the front of the list, changes head
     def insert_front(self, ele):
         newnode = Node(ele) # Initialising node
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             self.head = newnode
             self.head.llink = self.head
             self.head.rlink = self.head
@@ -37,7 +38,7 @@ class Llist():
     #traverses and inserts the element to the end of the list
     def insert_rear(self, ele):
         newnode = Node(ele) # Initialising node
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             self.head = newnode
             self.head.llink = self.head
             self.head.rlink = self.head
@@ -50,7 +51,7 @@ class Llist():
     #inserts the element after the specified data node. If data node is not found, does nothing     
     def insert_after(self, prev_data, ele):
         newnode = Node(ele) # Initialising node
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             return 0
         else: #when list is not empty
             if(self.head.rlink == self.head or self.head.data == prev_data): #if there is only one element in the list or if the selected node is head itself
@@ -76,7 +77,7 @@ class Llist():
 
     #deletes the head element of the list
     def delete_front(self):
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             return None
         else: #when list is not empty
             if(self.head.rlink == self.head): #if there is only one element in list
@@ -92,7 +93,7 @@ class Llist():
                 
     #deletes the last element of the list
     def delete_rear(self):
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             return None
         elif(self.head.rlink == self.head): #if there is only one element in list
             x = self.head.data
@@ -106,7 +107,7 @@ class Llist():
         
     #deletes the specified element from the list
     def delete_pos(self, ele):
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             return None
         elif(self.head.data == ele): #if there is only one element in list
             x = self.delete_front()
@@ -125,7 +126,7 @@ class Llist():
     
     #returns 1 if the searched element is found. else returns 0
     def search(self, ele):
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             return 0
         else: #when list is not empty
             temp = self.head.rlink
@@ -138,7 +139,7 @@ class Llist():
             
     #displays the list in linear form
     def display(self):
-        if(self.isempty() == True):
+        if(self.isempty()):
             print("List empty")
         else:
             print("Your linked list is:")
