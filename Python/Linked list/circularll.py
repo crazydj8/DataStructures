@@ -1,4 +1,5 @@
 #This is a python code to implement circular linked lists in python 
+#Code by Akshat Aryan
 import os
 
 class Node():
@@ -22,7 +23,7 @@ class Llist():
     #inserts element at the front of the list, changes head
     def insert_front(self, ele):
         newnode = Node(ele) # Initialising node
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             self.tail = newnode
             self.tail.link = self.tail
         else: #when list is not empty
@@ -32,7 +33,7 @@ class Llist():
     #traverses and inserts the element to the end of the list
     def insert_rear(self, ele):
         newnode = Node(ele) # Initialising node
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             self.tail = newnode
             self.tail.link = self.tail
         else: #when list is not empty
@@ -43,7 +44,7 @@ class Llist():
     #inserts the element after the specified data node. If data node is not found, does nothing     
     def insert_after(self, prev_data, ele):
         newnode = Node(ele) # Initialising node
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             return 0
         else: #when list is not empty
             if(self.tail.data == prev_data): #if searched element is tail itself
@@ -66,7 +67,7 @@ class Llist():
             
     #deletes the head element of the list
     def delete_front(self):
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             return None
         else: #when list is not empty
             if(self.tail.link == self.tail): #if there is only one element in list
@@ -81,7 +82,7 @@ class Llist():
     
     #deletes the last element of the list
     def delete_rear(self):
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             return None
         elif(self.tail.link == self.tail): #if there is only one element in list
             x = self.tail.data
@@ -99,7 +100,7 @@ class Llist():
                 
     #deletes the specified element from the list
     def delete_pos(self, ele):
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             return None
         elif(self.tail.link == self.tail): #if there is only one element in list
             if(self.tail.data == ele):
@@ -124,7 +125,7 @@ class Llist():
     
     #returns 1 if the searched element is found. else returns 0
     def search(self, ele):
-        if(self.isempty() == True): #when list is empty
+        if(self.isempty()): #when list is empty
             print("List empty")
             return 0
         else: #when list is not empty
@@ -140,7 +141,7 @@ class Llist():
             
     #displays the list in linear form
     def display(self):
-        if(self.isempty() == True):
+        if(self.isempty()):
             print("List empty")
         else:
             print("Your linked list is:")
