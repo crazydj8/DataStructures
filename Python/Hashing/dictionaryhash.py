@@ -1,4 +1,5 @@
 # python code to implement hash tables using dictionary
+#code by Akshat Aryan
 import os
 
 class Hashtable():
