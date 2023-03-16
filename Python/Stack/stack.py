@@ -1,4 +1,5 @@
 #This is a python code to implement stacks in python using python lists
+#code by Akshat Aryan
 import os
 
 class Stack():
