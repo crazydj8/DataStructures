@@ -1,4 +1,5 @@
 #Python code to implement graph in python using linked lists
+#code By Akshat Aryan
 import os
 import numpy as np
 '''you can only import modules if they are present in Python root lib folder, or if they are in current directory of the current program
