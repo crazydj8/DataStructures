@@ -4,7 +4,7 @@ Currently Languages used:
 
 - [Python](https://github.com/crazydj8/DataStructures/tree/main/Python)
 - [C](https://github.com/crazydj8/DataStructures/tree/main/C)
-- [Java](https://github.com/crazydj8/DataStructures/tree/main/Java)
+- [Java](https://github.com/anubhav1433/DataStructures/tree/main/Java)
 
 ## The data structures implemented are:
 
