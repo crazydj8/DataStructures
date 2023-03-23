@@ -11,69 +11,73 @@ public class Singly_LinkedList {
 		// Constructor
 		Node(int d)
 		{
-			data = d;
-			next = null;
+			data = d;			//Assigns data to data variable of the node
+			next = null;		//Makes the next pointer of that node as NULL
 		}
 	}
 	
+	//To insert the element at the end of the linked list
 	public static Singly_LinkedList insert(Singly_LinkedList list, int data)
 	{
 		Node new_node = new Node(data);
 		
 	
-		if (list.head == null) {
+		if (list.head == null) {				//if list is empty, insert as first node
 			list.head = new_node;
 		}
 		else {
 			Node cur = list.head;
-			while (cur.next != null) {
+			while (cur.next != null) {			//traverse to the last node
 				cur = cur.next;
 			}
 	
-			cur.next = new_node;
+			cur.next = new_node;				//insert newnode as last node
 		}
 	
 		return list;
 	}
 
+	//To insert the element at the begining of the linked list
 	public static Singly_LinkedList insertf(Singly_LinkedList list, int data)
 	{
 		Node new_node = new Node(data);
 		
 	
-		if (list.head == null) {
+		if (list.head == null) {				//if list is empty, insert as first node
 			list.head = new_node;
 		}
 		else {
-			new_node.next=list.head;
+			new_node.next=list.head;			//change head pointer if list is not empty
 			list.head=new_node;
 		}
 	
 		return list;
 	}
 	
+	//To insert the element at a specific position in the linked list
 	public static Singly_LinkedList insertp(Singly_LinkedList list, int data,int pos)
 	{
 		Node new_node = new Node(data);
 		
 	
-		if (list.head == null) {
+		if (list.head == null) {				//if list is empty, insert as first node
 			list.head = new_node;
 		}
 		else {
 			Node cur=list.head,pre=list.head;
-			for(int i=0;i<pos;i++)
+			for(int i=0;i<pos;i++)				//finding the node address where newnode is going to be added
 			{
 				pre=cur;
 				cur=cur.next;
 			}
-			pre.next=new_node;
+			pre.next=new_node;					//inserting the newnode after prev pointer
 			new_node.next=cur;
 		}
 	
 		return list;
 	}
 
+	//To delete a node from the begining of the linked list
 	public static Singly_LinkedList deletef(Singly_LinkedList list)
 	{
 	
@@ -81,34 +85,36 @@ public class Singly_LinkedList {
 			System.out.println("LIST IS EMPTY");
 		}
 		else {
-			list.head=list.head.next;
+			list.head=list.head.next;					//changing the head pointer to the second node
 		}
 	
 		return list;
 	}
 
+	//To delete a node from the end of the linked list
 	public static Singly_LinkedList deleter(Singly_LinkedList list)
 	{
 
 		if (list.head == null) {
 			System.out.println("EMPTY LIST");
 		}
-		else if(list.head.next==null)
+		else if(list.head.next==null)						//if the list has only one node
 		{
 			list.head=null;
 		}
 		else {
 			Node cur=list.head,pre=list.head;
-			while (cur.next != null) {
+			while (cur.next != null) {						//traversing till the end of the linked list
 				pre=cur;
 				cur = cur.next;
 			}
-			pre.next=null;
+			pre.next=null;										//change the second last node's next address to NULL
 		}
 	
 		return list;
 	}
 
+	//To delete a node from a particulat position from the linked list
 	public static Singly_LinkedList deletepos(Singly_LinkedList list,int position)
     {
         // If linked list is empty
@@ -117,7 +123,7 @@ public class Singly_LinkedList {
  
         Node temp = list.head;
  
-        if (position == 0)
+        if (position == 0)						//if pos is 0
         {
             list.head = temp.next;   
         }
@@ -134,15 +140,16 @@ public class Singly_LinkedList {
 	return list;
     }
 
+	//To print the elements of the linked list
 	public static void printList(Singly_LinkedList list)
 	{
 		Node currNode = list.head;
 	
 		System.out.print("LinkedList: ");
 	
-		while (currNode != null) {
+		while (currNode != null) {					//traverses all the nodes of the linked list. If temp->next!=NULL is used then element in the last node won't be printed
 			
-			System.out.print(currNode.data + " ");
+			System.out.print(currNode.data + " ");		//prints the data of the nodes
 
 			
 			currNode = currNode.next;
@@ -150,6 +157,7 @@ public class Singly_LinkedList {
 		System.out.println();
 	}
 
+	//Menu based operation
 	public static void main(String[] args)
 	{
 		Scanner sc= new Scanner(System.in);
