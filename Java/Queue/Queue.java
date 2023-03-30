@@ -8,46 +8,46 @@ class Queue {
     int[] array;
 
     public Queue(int capacity) {
-        this.capacity = capacity;
-        this.front = this.size = 0;
-        this.rear = capacity - 1;
-        this.array = new int[this.capacity];
+        this.capacity = capacity;                           //Hardcoding the maximum size of the queue.
+        this.front = this.size = 0;                         //stores the position of the front and size of the queue
+        this.rear = capacity - 1;                           //stores the position of the rear of the queue
+        this.array = new int[this.capacity];                //actual queue where elements are stored
     }
 
-    public boolean isFull(Queue queue) {
+    public boolean isFull(Queue queue) {                     //checks if queue is full 
         return (queue.size == queue.capacity);
     }
 
-    public boolean isEmpty(Queue queue) {
+    public boolean isEmpty(Queue queue) {                   //checks if queue is empty
         return (queue.size == 0);
     }
 
     public void enqueue(int item) {
-        if (isFull(this))
+        if (isFull(this))                                    //checks if queue is full 
             return;
-        this.rear = (this.rear + 1) % this.capacity;
-        this.array[this.rear] = item;
-        this.size++;
+        this.rear = (this.rear + 1) % this.capacity;         //first changing the rear pointer then adding the elment there.
+        this.array[this.rear] = item;                       //adding data to the queue
+        this.size++;                                        //incrementing size
     }
 
     public int dequeue() {
-        if (isEmpty(this))
+        if (isEmpty(this))                                  //if queue is empty
             return Integer.MIN_VALUE;
-        int item = this.array[this.front];
-        this.front = (this.front + 1) % this.capacity;
-        this.size--;
+        int item = this.array[this.front];                  //adding first data toa variable
+        this.front = (this.front + 1) % this.capacity;      //changing the front pointer value. The data is not removed from the array, only the first pointer value is incremented
+        this.size--;                                        //decrementing size
         return item;
     }
 
-    public int peek() {
-        if (isEmpty(this))
+    public int peek() {                                      //to see which is the next element in the queue
+        if (isEmpty(this))                                  //if the queue is empty
             return Integer.MIN_VALUE;
-        return this.array[this.front];
+        return this.array[this.front];                      //returning the data at front position of the queue 
     }
 
-    public void display() {
+    public void display() {                                  //to print the data in the queue in order
         System.out.print("Queue: ");
-        for (int i = this.front; i <= this.rear; i++) {
+        for (int i = this.front; i <= this.rear; i++) {      //running the loop from front of the queue till the rear of the queue
             System.out.print(this.array[i] + " ");
         }
         System.out.println();
