@@ -176,7 +176,7 @@ class BST {
                     break;
                 }
             }
-            sc.close();
-        }
+            
+        }sc.close();
     }
 }
