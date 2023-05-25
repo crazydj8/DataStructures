@@ -23,4 +23,3 @@ Currently Languages used:
 - [Aditya Poddar](https://github.com/AdityaX24)
 - [Anubhav Mendhiratta](https://github.com/anubhav1433)
 <hr>
-Please show your love by starring it.🙂
