@@ -3,39 +3,41 @@ package Java.Stack;
 import java.util.*;
 
 public class StackImplementation {
-    private int top;
-    private int[] arr;
-    private int maxSize;
+    private int top;                                            //top stores the index value of the top of the stack
+    private int[] arr;                                          //stores all the items of the stack
+    private int maxSize;                                        //Hardcoding the maximum size of the stack.
 
     // Constructor
     public StackImplementation(int maxSize) {
         this.maxSize = maxSize;
         arr = new int[maxSize];
-        top = -1;
+        top = -1;                                               //initializing stack top to -1
     }
+
+//stack is a data structure that works on Last In First Out(LIFO) principle.
 
     // push method to add elements to the stack
     public void push(int element) {
-        if (top == maxSize - 1) {
+        if (top == maxSize - 1) {                               //stack full(overflow) condition
             System.out.println("Stack Overflow");
         } else {
-            arr[++top] = element;
+            arr[++top] = element;                               //increasing the index of top of the stack if stack is not full and placing element at the new stack top
         }
     }
 
     // pop method to remove and return the top element from the stack
     public int pop() {
-        if (top == -1) {
+        if (top == -1) {                                        //if stack is empty underflow condition
             System.out.println("Stack Underflow");
             return -1;
         } else {
-            return arr[top--];
+            return arr[top--];                                  //reducing the index of top of the stack. It does not delete the element from the array but makes it not accessible.  
         }
     }
 
     // peek method to return the top element from the stack without removing it
     public int peek() {
-        if (top == -1) {
+        if (top == -1) {                                        //stack empty condition
             System.out.println("Stack is Empty");
             return -1;
         } else {
@@ -45,18 +47,18 @@ public class StackImplementation {
 
     // display method to print all the elements in the stack
     public void display() {
-        if (top == -1) {
+        if (top == -1) {                                         //stack empty condition
             System.out.println("Stack is Empty");
         } else {
             System.out.println("Elements in the Stack are:");
-            for (int i = top; i >= 0; i--) {
+            for (int i = top; i >= 0; i--) {                    //displaying the most recent item first
                 System.out.print(" "+arr[i]);
             }
             System.out.println();
         }
     }
 
-    // main method to test the Stack implementation
+    // menu driven main method to test the Stack implementation
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 

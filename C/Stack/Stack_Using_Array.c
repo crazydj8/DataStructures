@@ -32,7 +32,7 @@ int pop(STK *p)                //pop operation to remove an element from the top
 {
     if(p->top==-1)
     {
-        return -1;             //if stack if empty 
+        return -1;             //if stack is empty 
     }
     else
     {

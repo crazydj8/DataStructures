@@ -5,16 +5,16 @@ class Node {
     Node prev;
     Node next;
     Node(int d) {
-        data = d;
-        prev = null;
-        next = null;
+        data = d;                           //Assigns data to data variable of the node
+        prev = null;                        //Makes the left link pointer of that node as NULL
+        next = null;                        //Makes the right link pointer of that node as NULL
     }
 }
 
 public class DoublyLinkedList {
     Node head;
     DoublyLinkedList() {
-        head = null;
+        head = null;                        //To initialize the linked list head pointer
     }
     
     // Function to insert a node at the front of the doubly linked list
@@ -24,28 +24,28 @@ public class DoublyLinkedList {
         if(head != null) {
             head.prev = newNode;
         }
-        head = newNode;
+        head = newNode;                     //change head pointer if list is not empty
     }
     
     // Function to insert a node at the rear of the doubly linked list
     void insertRear(int data) {
         Node newNode = new Node(data);
         Node current = head;
-        if(current == null) {
+        if(current == null) {               //if list is empty, insert as first node
             head = newNode;
-        } else {
-            while(current.next != null) {
+        } else {                             //if list is not empty
+            while(current.next != null) {   //traverse to the end of the given list
                 current = current.next;
             }
-            current.next = newNode;
-            newNode.prev = current;
+            current.next = newNode;             //make the newnode as the last node
+            newNode.prev = current;             //store the address of the previous last node as the left link of the new last node
         }
     }
     
     // Function to insert a node at a given position in the doubly linked list
     void insertAtPos(int data, int pos) {
         Node newNode = new Node(data);
-        if(pos == 1) {
+        if(pos == 1) {                           //if position is 1 then insert as next of first node
             newNode.next = head;
             if(head != null) {
                 head.prev = newNode;
@@ -53,14 +53,14 @@ public class DoublyLinkedList {
             head = newNode;
         } else {
             Node current = head;
-            for(int i = 1; i < pos - 1 && current != null; i++) {
+            for(int i = 1; i < pos - 1 && current != null; i++) {       //finding the node address where newnode is going to be added
                 current = current.next;
             }
             if(current != null) {
                 newNode.next = current.next;
                 current.next = newNode;
                 newNode.prev = current;
-                if(newNode.next != null) {
+                if(newNode.next != null) {                                 //inserting the newnode at the specific position;
                     newNode.next.prev = newNode;
                 }
             } else {
@@ -74,9 +74,9 @@ public class DoublyLinkedList {
         if(head == null) {
             System.out.println("List is empty");
         } else {
-            head = head.next;
+            head = head.next;                                       //changing the head pointer to the second node
             if(head != null) {
-                head.prev = null;
+                head.prev = null;                                   
             }
         }
     }
@@ -87,10 +87,10 @@ public class DoublyLinkedList {
             System.out.println("List is empty");
         } else {
             Node current = head;
-            while(current.next != null) {
+            while(current.next != null) {                               //traversing till the end of the linked list
                 current = current.next;
             }
-            if(current.prev != null) {
+            if(current.prev != null) {                                  //if the list has only one node
                 current.prev.next = null;
             } else {
                 head = null;
@@ -101,8 +101,8 @@ public class DoublyLinkedList {
     // Function to print the doubly linked list
     void printList() {
         Node current = head;
-        while(current != null) {
-            System.out.print(current.data + " ");
+        while(current != null) {                        //traverses all the nodes of the linked list. If temp->rlink!=NULL is used then element in the last node won't be printed
+            System.out.print(current.data + " ");        //prints the data of the nodes
             current = current.next;
         }
         System.out.println();
